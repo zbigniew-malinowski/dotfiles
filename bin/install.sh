@@ -22,7 +22,7 @@ fi
 echo "linking .files"
 ln ~/.dotfiles/zshrc ~/.zshrc
 
-if $(which zsh) ; then
+if eval which zsh ; then
   if [[ $SHELL == *"zsh"* ]]; then
     echo "zsh installed and ready to go, "
     echo "please restart the terminal"
