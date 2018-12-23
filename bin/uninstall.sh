@@ -5,3 +5,4 @@ if [[ -e ~/.dotfiles.old/.zshrc ]]; then
 fi
 rm -rf ~/.dotfiles.old
 rm -rf ~/.antigen
+chsh -s $(which bash)
