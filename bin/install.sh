@@ -25,7 +25,7 @@ ln ~/.dotfiles/zshrc ~/.zshrc
 if $(which zsh) ; then
   if [[ $SHELL == *"zsh"* ]]; then
     echo "zsh installed and ready to go, "
-    source .zshrc
+    echo "please restart the terminal"
     exit
   fi
 else
