@@ -1,13 +1,13 @@
-#!/bin/bash
+
+echo off
 
 if [[ -d ~/.dotfiles ]]; then
     echo ".dotfiles already exists, skipping setup"
     exit
 fi
 
-git clone https://github.com/zbigniew-malinowski/dotfiles ~/.dotfiles
+git clone git@github.com:zbigniew-malinowski/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-git submodule add https://github.com/zsh-users/antigen.git antigen
 
 if [[ -L ~/.zshrc ]] ; then
     echo "removing old link"
@@ -23,9 +23,19 @@ fi
 echo "linking .files"
 ln ~/.dotfiles/zshrc ~/.zshrc
 
-echo "installing zsh"
-brew install zsh
+if $(which zsh) ; then
+  if [[ $SHELL == *"zsh"* ]]; then
+    echo "zsh installed and ready to go, "
+    source .zshrc
+    exit
+  fi
+else
+  echo "installing zsh"
+  brew install zsh
+fi
 
 echo "setting zsh as the default shell"
 sudo echo "$(which zsh)" >> /etc/shells
 chsh -s $(which zsh)
+
+echo "please restart the terminal"
