@@ -8,7 +8,7 @@ fi
 
 git clone --recurse-submodules git@github.com:zbigniew-malinowski/dotfiles.git ~/.dotfiles
 
-if [[ -L ~/.zshrc ]] ; then
+if [[ -h ~/.zshrc ]] ; then
     echo "removing old link"
     rm ~/.zshrc
 fi
@@ -16,7 +16,7 @@ fi
 if [[ -e ~/.zshrc ]] ; then
   echo "backing up old .files"
   mkdir ~/.dotfiles.old
-  cp ~/.zshrc ~/.dotfiles.old/.zshrc
+  mv ~/.zshrc ~/.dotfiles.old/.zshrc
 fi
 
 echo "linking .files"
