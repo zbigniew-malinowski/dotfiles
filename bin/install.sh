@@ -19,9 +19,6 @@ if [[ -e ~/.zshrc ]] ; then
   mv ~/.zshrc ~/.dotfiles.old/.zshrc
 fi
 
-echo "linking .files"
-ln ~/.dotfiles/zshrc ~/.zshrc
-
 if $(which zsh) ; then
   if [[ $SHELL == *"zsh"* ]]; then
     echo "zsh installed and ready to go, "
@@ -36,5 +33,8 @@ fi
 echo "setting zsh as the default shell"
 sudo echo "$(which zsh)" >> /etc/shells
 chsh -s $(which zsh)
+
+echo "linking .files"
+ln ~/.dotfiles/zshrc ~/.zshrc
 
 echo "please restart the terminal"
