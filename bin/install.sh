@@ -23,5 +23,9 @@ fi
 echo "linking .files"
 ln ~/.dotfiles/zshrc ~/.zshrc
 
+echo "installing zsh"
+brew install zsh
+
 echo "setting zsh as the default shell"
+sudo echo "$(which zsh)" >> /etc/shells
 chsh -s $(which zsh)
