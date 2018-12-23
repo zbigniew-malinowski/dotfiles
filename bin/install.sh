@@ -14,7 +14,7 @@ if [[ -L ~/.zshrc ]] ; then
     rm ~/.zshrc
 fi
 
-if [[ -e ~/.zshrc ]] then
+if [[ -e ~/.zshrc ]] ; then
   echo "backing up old .files"
   mkdir ~/.dotfiles.old
   cp ~/.zshrc ~/.dotfiles.old/.zshrc
