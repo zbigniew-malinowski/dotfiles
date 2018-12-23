@@ -7,7 +7,6 @@ if [[ -d ~/.dotfiles ]]; then
 fi
 
 git clone --recurse-submodules git@github.com:zbigniew-malinowski/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
 
 if [[ -L ~/.zshrc ]] ; then
     echo "removing old link"
