@@ -13,6 +13,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 
-antigen theme agnoster
+#antigen theme agnoster
+antigen theme eendroroy/alien-minimal alien-minimal
 
 antigen apply
