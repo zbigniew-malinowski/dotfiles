@@ -13,7 +13,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 
-#antigen theme agnoster
-antigen theme eendroroy/alien-minimal alien-minimal
+antigen theme agnoster/agnoster-zsh-theme agnoster
+# antigen theme eendroroy/alien alien
+# antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen apply
+
+# disable virtual env
+AGNOSTER_PROMPT_SEGMENTS[3]=
