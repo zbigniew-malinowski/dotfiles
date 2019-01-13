@@ -1,22 +1,32 @@
 
-ALIASES_FILE_PATH=${0:a:h}/.aliases
+GLOBAL=${0:a:h}/.aliases
+LOCAL=${0:a:h}/.aliases-local
 
-function save-alias() {
+function _alias() {
 
     ALIAS_NAME=`echo "$1" | grep -o ".*="`
-
+    ALIAS_FILE=$2
+    touch $ALIAS_FILE
     # Deleting dublicate aliases
     OS=$(uname)
     if [ "$OS"="Darwin" ]; then
-      sed -i "" "/alias $ALIAS_NAME/d" $ALIASES_FILE_PATH
+      sed -i "" "/alias $ALIAS_NAME/d" $ALIAS_FILE
     else
-      sed -i "/alias $ALIAS_NAME/d" $ALIASES_FILE_PATH
+      sed -i "/alias $ALIAS_NAME/d" $ALIAS_FILE
     fi
 
     # Quoting command: my-alias=command -> my-alias="command"
     QUOTED=`echo "$1"\" | sed "s/$ALIAS_NAME/$ALIAS_NAME\"/g"`
-    echo "alias $QUOTED" >> $ALIASES_FILE_PATH
+    echo "alias $QUOTED" >> $ALIAS_FILE
 
     # Loading aliases
-    source $ALIASES_FILE_PATH
+    source $ALIAS_FILE
+}
+
+function lalias(){
+    _alias $1 $LOCAL
+}
+
+function galias(){
+    _alias $1 $GLOBAL
 }
