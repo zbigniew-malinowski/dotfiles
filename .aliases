@@ -9,7 +9,7 @@ function _alias() {
     touch $ALIAS_FILE
     # Deleting dublicate aliases
     OS=$(uname)
-    if [ "$OS"="Darwin" ]; then
+    if [ "$OS" = "Darwin" ]; then
       sed -i "" "/alias $ALIAS_NAME/d" $ALIAS_FILE
     else
       sed -i "/alias $ALIAS_NAME/d" $ALIAS_FILE
