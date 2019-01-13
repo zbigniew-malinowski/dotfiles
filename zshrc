@@ -5,7 +5,9 @@ source $ZSHA_BASE/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 
-if [ "$OSTYPE"="darwin11.0" ]; then
+OS=$(uname)
+
+if [ "$OS"="Darwin" ]; then
   antigen bundle osx
 fi
 

@@ -6,7 +6,12 @@ function save-alias() {
     ALIAS_NAME=`echo "$1" | grep -o ".*="`
 
     # Deleting dublicate aliases
-    sed -i "" "/alias $ALIAS_NAME/d" $ALIASES_FILE_PATH
+    OS=$(uname)
+    if [ "$OS"="Darwin" ]; then
+      sed -i "" "/alias $ALIAS_NAME/d" $ALIASES_FILE_PATH
+    else
+      sed -i "/alias $ALIAS_NAME/d" $ALIASES_FILE_PATH
+    fi
 
     # Quoting command: my-alias=command -> my-alias="command"
     QUOTED=`echo "$1"\" | sed "s/$ALIAS_NAME/$ALIAS_NAME\"/g"`
