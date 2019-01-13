@@ -1,3 +1,4 @@
+ANTIGEN_AUTO_CONFIG=false
 ZSHA_BASE=$HOME/.dotfiles
 source $ZSHA_BASE/antigen/antigen.zsh
 
@@ -21,3 +22,8 @@ antigen apply
 
 # disable virtual env
 AGNOSTER_PROMPT_SEGMENTS[3]=
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+free-port() { kill "$(lsof -t -i :$1)"; }
+kill-port() { kill -kill "$(lsof -t -i :$1)"; }
