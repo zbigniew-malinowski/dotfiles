@@ -1,0 +1,17 @@
+
+ALIASES_FILE_PATH=${0:a:h}/.aliases
+
+function save-alias() {
+
+    ALIAS_NAME=`echo "$1" | grep -o ".*="`
+
+    # Deleting dublicate aliases
+    sed -i "" "/alias $ALIAS_NAME/d" $ALIASES_FILE_PATH
+
+    # Quoting command: my-alias=command -> my-alias="command"
+    QUOTED=`echo "$1"\" | sed "s/$ALIAS_NAME/$ALIAS_NAME\"/g"`
+    echo "alias $QUOTED" >> $ALIASES_FILE_PATH
+
+    # Loading aliases
+    source $ALIASES_FILE_PATH
+}
