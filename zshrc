@@ -15,6 +15,7 @@ antigen bundle vagrant
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle globalias
 
 antigen theme agnoster/agnoster-zsh-theme agnoster
 # antigen theme eendroroy/alien alien
