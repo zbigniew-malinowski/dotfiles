@@ -31,3 +31,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 free-port() { kill "$(lsof -t -i :$1)"; }
 kill-port() { kill -kill "$(lsof -t -i :$1)"; }
+
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_SDK_ROOT=$ANDROID_SDK
+export ANDROID_NDK=/opt/android_ndk/r15c
+export PATH=$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools
