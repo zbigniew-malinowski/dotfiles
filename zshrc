@@ -1,6 +1,7 @@
 ANTIGEN_AUTO_CONFIG=false
 ZSHA_BASE=$HOME/.dotfiles
 source $ZSHA_BASE/antigen/antigen.zsh
+source .aliases
 
 antigen use oh-my-zsh
 antigen bundle git

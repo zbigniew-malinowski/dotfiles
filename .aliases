@@ -2,11 +2,14 @@
 GLOBAL=${0:a:h}/.aliases
 LOCAL=${0:a:h}/.aliases-local
 
+touch $GLOBAL
+touch $LOCAL
+
 function _alias() {
 
     ALIAS_NAME=`echo "$1" | grep -o ".*="`
     ALIAS_FILE=$2
-    touch $ALIAS_FILE
+
     # Deleting dublicate aliases
     OS=$(uname)
     if [ "$OS" = "Darwin" ]; then
