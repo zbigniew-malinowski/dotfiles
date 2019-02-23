@@ -5,6 +5,8 @@ LOCAL=${0:a:h}/.aliases-local
 touch $GLOBAL
 touch $LOCAL
 
+source $LOCAL
+
 function _alias() {
 
     ALIAS_NAME=`echo "$1" | grep -o ".*="`
