@@ -6,4 +6,7 @@ My shell config files
 
 Run:
 
+
+`sh <(curl -L https://raw.githubusercontent.com/zbigniew-malinowski/dotfiles/master/bin/install_powerline.sh)`
+
 `sh <(curl -L https://raw.githubusercontent.com/zbigniew-malinowski/dotfiles/master/bin/install.sh)`
